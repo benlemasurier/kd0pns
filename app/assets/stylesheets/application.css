@@ -68,5 +68,9 @@ section#main {
 }
 
 section#main a {
-  font-weight: bold;
+  text-decoration: underline;
+}
+
+section#main a:hover {
+  background-color: #eee;
 }
