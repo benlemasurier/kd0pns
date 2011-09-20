@@ -1,0 +1,15 @@
+- base_url = "http://#{request.host_with_port}"
+!!! XML
+%urlset{:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9"}
+  - for post in @posts
+    %url
+      %loc #{base_url}/posts/#{post.id}
+      %lastmod=post.updated_at
+      %changefreq daily 
+      %priority 0.5
+  - for log in @logs
+    %url
+      %loc #{base_url}/logs/#{log.id}
+      %lastmod=log.updated_at
+      %changefreq daily
+      %priority 0.5

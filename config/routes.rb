@@ -5,9 +5,10 @@ Kd0pnsCom::Application.routes.draw do
   resources :about
   resources :sessions
 
- 
   match 'login', :to => 'sessions#new', :as => "login"
   match 'logout', :to => 'sessions#destroy', :as => "logout"
+
+  match "/sitemap.:format", :to => "sitemap#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
