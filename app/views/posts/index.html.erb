@@ -3,7 +3,7 @@
     <h3><%= post.title -%></h3>
     <h4 class="date"><%= time_ago_in_words(post.created_at) -%> ago</h4>
     <p>
-      <%= post.content -%>
+      <%= raw RedCloth.new(post.content).to_html -%>
       <br />
       <% if admin? -%>
         <%= link_to 'Show', post %>
