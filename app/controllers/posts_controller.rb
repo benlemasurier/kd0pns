@@ -83,6 +83,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def feed
+    @title = "KD0PNS"
+    @posts = Post.order("updated_at desc")
+    @updated = @posts.first.updated_at unless @posts.empty?
+
+    respond_to do |format|
+      format.atom { render :layout => false }
+
+      # redirect rss feeds here.
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+    end
+  end
+
   protected
 
   def authenticate

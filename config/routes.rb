@@ -10,6 +10,10 @@ Kd0pnsCom::Application.routes.draw do
 
   match "/sitemap.:format", :to => "sitemap#index"
 
+  match '/feed' => 'posts#feed',
+      :as => :feed,
+      :defaults => { :format => 'atom' }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
