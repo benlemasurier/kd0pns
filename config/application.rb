@@ -9,14 +9,6 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-# hack redcloth into html5 compliance
-module RedCloth::Formatters::HTML
-  def acronym(opts)
-    opts[:block] = true
-    "<abbr#{pba(opts)}>#{caps(:text => opts[:text])}</abbr>"
-  end
-end
-
 module Kd0pnsCom
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

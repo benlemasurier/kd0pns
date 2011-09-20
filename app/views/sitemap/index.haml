@@ -12,12 +12,12 @@
   - for post in @posts
     %url
       %loc #{base_url}/posts/#{post.id}
-      %lastmod=post.updated_at
+      %lastmod=post.updated_at.to_s(:w3c)
       %changefreq daily 
       %priority 0.7
   - for log in @logs
     %url
       %loc #{base_url}/logs/#{log.id}
-      %lastmod=log.updated_at
+      %lastmod=log.updated_at.to_s(:w3c)
       %changefreq daily
       %priority 0.5
