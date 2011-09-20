@@ -1,0 +1,23 @@
+<% @logs.each do |log| %>
+  <article>
+    <h3 class="callsign"><%= log.callsign.upcase -%> <small>(<%= log.location %>)</small></h3>
+    <h4 class="date"><%= time_ago_in_words(log.created_at) -%> ago</h4>
+    <p>
+      on <%= log.band %> @ <%= log.frequency %>Mhz <%= log.mode.upcase %>
+      <br />
+      <% if admin? -%>
+        <small>
+          <%= link_to 'Show', log %>
+          <%= link_to 'Edit', edit_log_path(log) %>
+          <%= link_to 'Destroy', log, confirm: 'Are you sure?', method: :delete %>
+        </small>
+      <% end -%>
+    </p>
+  </article>
+<% end %>
+
+<br />
+
+<% if admin? -%>
+  <small><%= link_to 'New Log', new_log_path -%></small>
+<% end -%>

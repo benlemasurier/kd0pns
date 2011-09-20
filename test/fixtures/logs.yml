@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  callsign: MyString
+  band: MyString
+  frequency: 1.5
+  mode: MyString
+  location: MyString
+
+two:
+  callsign: MyString
+  band: MyString
+  frequency: 1.5
+  mode: MyString
+  location: MyString

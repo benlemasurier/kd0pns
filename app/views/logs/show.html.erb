@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Callsign:</b>
+  <%= @log.callsign %>
+</p>
+
+<p>
+  <b>Band:</b>
+  <%= @log.band %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @log.frequency %>
+</p>
+
+<p>
+  <b>Mode:</b>
+  <%= @log.mode %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @log.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>
