@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 gem 'mysql2'
 gem 'RedCloth'
 gem 'haml'
+#gem 'session_off'
 
 # Gems used only for assets and not required
 # in production environments by default.
